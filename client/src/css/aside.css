@@ -1,0 +1,19 @@
+.aside {
+  float: left;
+  margin: 0 1.5%;
+  width: 30%;
+  height: 70rem;
+  background-color: rgb(165, 165, 235);
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li {
+  list-style: none;
+  padding: 20px;
+  border: black 1px solid;
+}
