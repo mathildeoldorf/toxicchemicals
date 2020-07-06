@@ -2,12 +2,14 @@ import React, { useEffect, useState, useRef } from "react";
 import Chartjs from "chart.js";
 
 const ChartJobs = (props) => {
+  Chartjs.defaults.global.defaultFontColor = 'white';
+
   const [chartState, setChartState] = useState(props);
-  console.log(props);
-  console.log(chartState);
+  // console.log(props);
+  // console.log(chartState);
 
   useEffect(() => {
-    console.log(chartState);
+    // console.log(chartState);
   }, [chartState]);
 
   const chartConfig = {
@@ -16,13 +18,14 @@ const ChartJobs = (props) => {
       labels: [],
       datasets: [
         {
-          label: `Jobs completes`,
+          label: `Jobs`,
           data: props.dates,
-
           borderWidth: 1,
-          pointStyle: "triangle",
+          borderColor: "white",
+          color: "white",
+          pointStyle: "round",
           pointRadius: "10",
-          pointBackgroundColor: "red",
+          pointBackgroundColor: "aliceblue",
         },
       ],
       pointStyle: "triangle",
@@ -55,13 +58,19 @@ const ChartJobs = (props) => {
           },
         ],
       },
+      legend: {
+        labels: {
+          // This more specific font property overrides the global property
+          fontColor: 'white',
+        }
+      }
     },
   };
 
-  console.log("start create chart");
+  // console.log("start create chart");
   const chartContainer = useRef(null);
   const [chartInstance, setChartInstance] = useState(null);
-  console.log(chartInstance);
+  // console.log(chartInstance);
   const updateDataset = (datasetIndex, newData) => {
     if (chartInstance) {
       chartInstance.config.data.datasets[datasetIndex].data = newData;

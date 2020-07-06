@@ -1,24 +1,14 @@
-.container-start-page {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: [col] 22% [col] 22% [col] 22% [col] 22%;
-  grid-template-rows: [row] 100% [row] 100% [row];
+.jobsList li{
+  /* border: solid 1px #fff; */
+  color: #000;
 }
 
-.box {
-  padding: 20px;
-  font-size: 150%;
-  border: 1px solid black;
+section.home{
+  width: 70vw;
 }
 
-.alerts {
-  grid-column: col;
-  grid-row: row;
-}
-
-.jobs {
-  grid-column: col 2 / span 3;
-  grid-row: row;
+.home .banner{
+  /* width: 80%; */
 }
 
 .notify {
@@ -26,11 +16,10 @@
   top: 0;
   right: 1.3333em;
   width: 2em;
-  margin: 1.0833em 0;
   border-radius: 50%;
   font-size: 0.75em;
   line-height: 2;
-  text-align: center;
+  margin: 1vw auto;
   background: #f53d3d;
   box-shadow: 0 0 0 0.25em #c20a0a;
   animation: pulse 0.75s infinite;

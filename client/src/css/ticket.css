@@ -1,0 +1,11 @@
+button{
+    background-color: #0F2027;
+    color: white;
+    margin: 0;
+    transition: all .3s;
+    height: auto;
+}
+
+input{
+    margin: 0;
+}

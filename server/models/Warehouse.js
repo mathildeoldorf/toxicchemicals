@@ -36,6 +36,14 @@ class Warehouse extends Model {
                     to: 'tShipmentItem.nWarehouseID',
                 },
             },
+            chemicalStock: {
+                relation: Model.HasManyRelation,
+                modelClass: `${__dirname}/ChemicalStock.js`,
+                join: {
+                    from: "tWarehouse.nWarehouseID",
+                    to: "tChemicalStock.nWarehouseID"
+                }
+            }
         };
     }
 }

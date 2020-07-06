@@ -3,24 +3,24 @@ import Chartjs from "chart.js";
 
 const ChartChemicalsDispatched = (props) => {
   const [chartState, setChartState] = useState(props);
-
-  console.log(props);
+  Chartjs.defaults.global.defaultFontColor = 'white';
+  // console.log(props);
   // console.log(chartState);
 
   useEffect(() => {
-    console.log(chartState);
+    // console.log(chartState);
   }, [chartState]);
 
   let total = Object.values(props).pop();
-  console.log(total);
+  // console.log(total);
   const letters = Object.keys(props);
   const values = Object.values(props);
-  console.log(letters);
+  // console.log(letters);
   letters.pop();
   letters.pop();
   values.pop();
   values.pop();
-  console.log(letters, values);
+  // console.log(letters, values);
 
   const chartConfig = {
     type: "pie",
@@ -31,15 +31,15 @@ const ChartChemicalsDispatched = (props) => {
           label: `Total`,
           data: values,
           backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(324, 162, 235, 0.2)",
+            "#0f202769",
+            "#2c536438",
+            "rgba(255, 255, 255, 0.39)",
           ],
           borderColor: [
-            "rgba(255, 99, 132, 1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(324, 162, 235, 1)",
-          ],
+            "#0F2027",
+            "#2C5364",
+            "#fff",
+          ]
         },
       ],
     },
@@ -48,7 +48,7 @@ const ChartChemicalsDispatched = (props) => {
         display: true,
         position: "left",
         labels: {
-          fontColor: "rgb(255, 99, 132)",
+          fontColor: "#fff",
         },
       },
       title: {
@@ -77,7 +77,7 @@ const ChartChemicalsDispatched = (props) => {
     }
   };
   updateDataset(0, values, total);
-  console.log(chartInstance);
+  // console.log(chartInstance);s
 
   useEffect(() => {
     if (chartContainer && chartContainer.current) {

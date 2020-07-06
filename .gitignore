@@ -1,0 +1,5 @@
+node_modules/
+package-lock.json
+dbcredentials.js
+default.json
+
