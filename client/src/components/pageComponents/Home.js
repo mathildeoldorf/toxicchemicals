@@ -37,7 +37,8 @@ export default function StartPage() {
     setIsLoading(true);
     try {
       console.log('fetching all jobs')
-      let response = await axios.get("http://localhost:9090/shipmentJobs");
+      // let response = await axios.get("http://localhost:9090/shipmentJobs");
+      let response = await axios.get("https://toxicchemicals.herokuapp.com/shipmentJobs");
       let jobs = await response.data;
       // console.log(jobs);
       jobs.map((job, i) => {
@@ -153,7 +154,8 @@ export default function StartPage() {
 
   const fetchStock = async () => {
     setIsLoading(true);
-    const response = await axios('http://localhost:9090/warehouses/stock');
+    let response = await axios('https://toxicchemicals.herokuapp.com/warehouses/stock');
+    // const response = await axios('http://localhost:9090/warehouses/stock');
 
     const warehouses = response.data;
 

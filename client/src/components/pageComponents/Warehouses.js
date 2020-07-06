@@ -9,7 +9,8 @@ export default function Warehouses() {
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchStock = async () => {
-    const response = await axios('http://localhost:9090/warehouses/stock');
+    // const response = await axios('http://localhost:9090/warehouses/stock');
+    const response = await axios('https://toxicchemicals.herokuapp.com/warehouses/stock');
     const warehouses = response.data;
 
     warehouses.forEach(warehouse => {

@@ -76,7 +76,8 @@ export default function Chemicals() {
 
   const fetchjobItems = async () => {
     setIsLoading(true);
-    let response = await axios.get("http://localhost:9090/shipmentJobs");
+    // let response = await axios.get("http://localhost:9090/shipmentJobs");
+    let response = await axios.get("https://toxicchemicals.herokuapp.com/shipmentJobs");
     let jobs = await response.data;
     // console.log(jobs);
 

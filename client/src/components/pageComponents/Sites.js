@@ -96,7 +96,8 @@ export default function Sites() {
     setIsLoading(true);
     try {
       console.log('fetching all jobs')
-      let response = await axios.get("http://localhost:9090/shipmentJobs");
+      // let response = await axios.get("http://localhost:9090/shipmentJobs");
+      let response = await axios.get("https://toxicchemicals.herokuapp.com/shipmentJobs");
       let jobs = await response.data;
       // console.log(jobs);
 
@@ -139,7 +140,8 @@ export default function Sites() {
   }
 
   const fetchStock = async () => {
-    const response = await axios('http://localhost:9090/warehouses/stock');
+    // const response = await axios('http://localhost:9090/warehouses/stock');
+    const response = await axios('https://toxicchemicals.herokuapp.com/warehouses/stock');
     const warehouses = response.data;
     // console.log(warehouses);
 

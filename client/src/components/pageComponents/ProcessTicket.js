@@ -439,7 +439,8 @@ export default function ProcessTicket() {
   }
 
   const fetchStock = async () => {
-    const response = await axios('http://localhost:9090/warehouses/stock');
+    // const response = await axios('http://localhost:9090/warehouses/stock');
+    const response = await axios('https://toxicchemicals.herokuapp.com/warehouses/stock');
     const warehouses = response.data;
     console.log(warehouses);
 
@@ -469,7 +470,8 @@ export default function ProcessTicket() {
     console.log(stockSite2);
     try {
       console.log("posting a job ", job);
-      const response = await axios.post(`http://localhost:9090/processJob`, { job });
+      // const response = await axios.post(`http://localhost:9090/processJob`, { job });
+      const response = await axios.post(`https://toxicchemicals.herokuapp.com/processJob`, { job });
       console.log(response.data.response)
       if (response.data.response) {
         setJob({ ...job, status: 'Confirmed' });

@@ -28,7 +28,8 @@ const ticket = {
 const fetchSite = async () => {
     console.log("Fetching all info about the sites");
     const siteID = 1;
-    const response = await axios.get(`http://localhost:9090/site/${siteID}/warehouses/stock`);
+    // const response = await axios.get(`http://localhost:9090/site/${siteID}/warehouses/stock`);
+    const response = await axios.get(`https://toxicchemicals.herokuapp.com/site/${siteID}/warehouses/stock`);
     const data = await response.data;
     site = data;
     console.log(site.length);
