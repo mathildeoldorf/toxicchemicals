@@ -23,7 +23,7 @@ exports.up = function (knex) {
             table.foreign('nWarehouseID').references('nWarehouseID').inTable('tWarehouse');
             table.foreign('nChemicalID').references('nChemicalID').inTable('tChemical');
             table.integer('nStock').unsigned();
-            table.timestamps(true, true);
+            table.timestamp('updated_at').notNullable().defaultTo(knex.fn.now());
         })
         .createTable('tUser', (table) => {
             table.increments('nUserID').primary().unsigned().notNullable();
